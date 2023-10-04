@@ -6,7 +6,6 @@ menuSelect.addEventListener("change", handler)
 
 
 
-
 fetchBreeds().then(cats => {
     createMarkupOptions(cats);
     })
