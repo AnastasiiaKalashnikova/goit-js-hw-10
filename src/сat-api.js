@@ -13,8 +13,6 @@ return fetch(`${BASE_URL}/breeds?api_key=${KYE_API}`)
 
 
 
-
-
 function fetchCatByBreed(breedId) {
     return fetch(`${BASE_URL}/images/search?api_key=${KYE_API}&breed_ids=${breedId}`)
     .then(response => { return response.json() })
