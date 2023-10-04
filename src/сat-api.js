@@ -13,7 +13,7 @@ return fetch(`${BASE_URL}/breeds?api_key=${KYE_API}`)
         }
         return response.json();
     })
-}
+};
 
 
 
@@ -27,4 +27,4 @@ export function fetchCatByBreed(breedId) {
         return response.json();
     })
    
-}
+};
