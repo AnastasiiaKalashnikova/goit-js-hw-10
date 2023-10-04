@@ -17,7 +17,6 @@ function handler(evt) {
     const breedId = menuSelect.value
 fetchCatByBreed(breedId).then(cat => createMarkupCard(cat))
     .catch(error => console.log(error))
-   
     //const breedId = evt.currentTarget.value
     //console.dir(breedId) достукались до ід вибраного кота
     
