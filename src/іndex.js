@@ -1,4 +1,4 @@
-import { fetchBreeds, fetchCatByBreed } from "./сat-api.js";
+import { fetchBreeds, fetchCatByBreed } from './сat-api.js';
 
 const menuSelect = document.querySelector('.breed-select');
 const infoBox = document.querySelector('.cat-info');
