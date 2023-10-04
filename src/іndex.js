@@ -2,7 +2,7 @@ const menuSelect = document.querySelector('.breed-select')
 const infoBox = document.querySelector('.cat-info');
 menuSelect.addEventListener("change", handler)
 
-import { fetchBreeds, fetchCatByBreed } from "./сat-api";
+import { fetchBreeds, fetchCatByBreed } from "./сat-api.js";
 
 
 fetchBreeds().then(cats => {
