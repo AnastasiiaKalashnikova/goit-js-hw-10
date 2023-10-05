@@ -29,3 +29,7 @@ h2 {
 .text {
     font-size: 20px;
 }
+
+.breed-select {
+    margin-left: 20px;
+}
