@@ -1,4 +1,4 @@
-import {fetchBreeds, fetchCatByBreed} from '../src/сat-api';
+import {fetchBreeds, fetchCatByBreed} from './сat-api';
 
 const menuSelect = document.querySelector('.breed-select');
 const infoBox = document.querySelector('.cat-info');
@@ -14,16 +14,15 @@ fetchBreeds().then(cats => {
 
 
 function handler(evt) {
-    const breedId = menuSelect.value
-    fetchCatByBreed(breedId).then(cat => createMarkupCard(cat)
-    
+    const breedId = evt.currentTarget.value
+    console.dir(breedId) //достукались до ід вибраного кота
+    fetchCatByBreed(breedId).then(cat => createMarkupCard(cat)//console.log(data)//createMarkupCard(cat)
     )    
-    // зробити ще розмітку для картки
     .catch(error => console.log(error))
-    //const breedId = evt.currentTarget.value
-    //console.dir(breedId) достукались до ід вибраного кота
-    
 }
+
+
+    
 //fetchCatByBreed(breedId)}
     
 
@@ -33,7 +32,7 @@ function handler(evt) {
 //розмітка опцій в селекті
 function createMarkupOptions(array) {
     const markup = array.map(({ id, name }) => `<option value=" ${id}"> ${name} </option>`).join('');
-        menuSelect.insertAdjacentHTML('beforeend',markup)
+        return menuSelect.insertAdjacentHTML('beforeend',markup)
 }
 
 //створення розмітки картки вибраного кота
@@ -41,5 +40,5 @@ function createMarkupCard(array) {
     const markup = array.map(({ name, temperament, description}) => `<h2>${name}</h2>
       <p>${description}</p>
       <p><b>Temperament:</b>${temperament}</Temperament:b> </p>`).join('');
-    infoBox.insertAdjacentHTML('beforeend',markup)
+    return infoBox.insertAdjacentHTML('beforeend',markup)
 }
