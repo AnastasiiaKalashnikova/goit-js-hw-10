@@ -5,7 +5,7 @@
 .cat-info {
     margin-top: 30px;
     margin-left: 20px;
-    max-width: 700px;
+    max-width: 500px;
 }
 
 .error {
@@ -16,15 +16,16 @@
 
 .loader {
 
-    font-size: 28;
+    font-size: 22;
     font-style: italic;
     margin-left: 20px;
+    margin-top: 30px;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .text {
-    font-size: 24px;
+    font-size: 20px;
 }

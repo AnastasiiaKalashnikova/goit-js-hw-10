@@ -51,7 +51,7 @@ function createMarkupOptions(array) {
 function createMarkupCard(array) {
     return array.map(({ url, breeds
     }) =>
-        `<img src="${url}" alt="${breeds[0].name}" width="700"><h2>${breeds[0].name}</h2>
+        `<img src="${url}" alt="${breeds[0].name}" width="500"><h2>${breeds[0].name}</h2>
       <p class="text">${breeds[0].description}</p>
       <p class="text"><b>Temperament:</b>${breeds[0].temperament}</Temperament:b> </p>`).join('');
 }
