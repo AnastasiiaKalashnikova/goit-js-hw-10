@@ -1,5 +1,6 @@
 import { fetchBreeds, fetchCatByBreed } from "./сat-api";
 
+
 const menuSelect = document.querySelector('.breed-select');
 const infoBox = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
