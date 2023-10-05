@@ -1,4 +1,4 @@
-import {fetchBreeds, fetchCatByBreed} from './сat-api';
+import { fetchBreeds, fetchCatByBreed } from "./сat-api";
 
 const menuSelect = document.querySelector('.breed-select');
 const infoBox = document.querySelector('.cat-info');
@@ -30,7 +30,8 @@ function handler(evt) {
         .catch(error => {
             errorMassage.classList.remove('is-hidden');
             loader.classList.add('is-hidden');
-            menuSelect.classList.add('is-hidden') //не зрозуміла з тз, чи треба при помилці зовати селект
+            menuSelect.classList.add('is-hidden')
+            //setTimeout(() => {menuSelect.classList.remove('is-hidden')}, 2000) //не зрозуміла з тз, чи треба при помилці зовати селект
             return console.log(error)
         })
 }
