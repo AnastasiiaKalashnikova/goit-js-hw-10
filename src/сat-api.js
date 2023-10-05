@@ -24,7 +24,6 @@ export function fetchCatByBreed(breedId) {
         if(!response.ok){
             throw new Error(response.status);
         }
-        console.log(breedId)
         return response.json();
     })
    
