@@ -12,8 +12,15 @@ menuSelect.addEventListener("change", handler);
 //створюємо опції в меню селекта
 fetchBreeds().then(cats => {
     createMarkupOptions(cats);
+    menuSelect.classList.remove('is-hidden');
+    loader.classList.add('is-hidden')
     })
-    .catch(error => console.log(error))
+    .catch(error => {
+        errorMassage.classList.remove('is-hidden');
+        loader.classList.add('is-hidden');
+        menuSelect.classList.add('is-hidden')
+        console.log(error)
+    })
 
 
 
@@ -23,16 +30,21 @@ function handler(evt) {
     errorMassage.classList.add('is-hidden')
     infoBox.classList.add('is-hidden')
     const breedId = evt.currentTarget.value.trim()
-    fetchCatByBreed(breedId).then(cat => { 
-        infoBox.innerHTML = createMarkupCard(cat)
-        loader.classList.add('is-hidden')
-        infoBox.classList.remove('is-hidden')
-    })    
+    fetchCatByBreed(breedId)
+        .then(cat => { 
+            if (cat.length === 0) {
+                throw new Error();   
+            }
+
+            infoBox.innerHTML = createMarkupCard(cat)
+            loader.classList.add('is-hidden')
+            infoBox.classList.remove('is-hidden')
+        })    
         .catch(error => {
             errorMassage.classList.remove('is-hidden');
             loader.classList.add('is-hidden');
             menuSelect.classList.add('is-hidden')
-            //setTimeout(() => {menuSelect.classList.remove('is-hidden')}, 2000) //не зрозуміла з тз, чи треба при помилці зовати селект
+            setTimeout(() => { menuSelect.classList.remove('is-hidden') }, 2000);
             return console.log(error)
         })
 }

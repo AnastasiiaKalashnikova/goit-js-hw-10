@@ -8,7 +8,7 @@ const KYE_API = "live_dUrCbvWl3gvkPdcDZGQpldZZUJrft6N4eeuhRFreMQE1flDI0IVlKPsxLU
 export function fetchBreeds() {
 return fetch(`${BASE_URL}/breeds?api_key=${KYE_API}`)
     .then(response => {
-        if(!response.ok){
+        if (!response.ok){
             throw new Error(response.status);
         }
         return response.json();
@@ -20,8 +20,8 @@ return fetch(`${BASE_URL}/breeds?api_key=${KYE_API}`)
 
 export function fetchCatByBreed(breedId) {
     return fetch(`${BASE_URL}/images/search?api_key=${KYE_API}&breed_ids=${breedId}`)
-    .then(response => {
-        if(!response.ok){
+        .then(response => {
+        if (!response.ok) {
             throw new Error(response.status);
         }
         return response.json();
